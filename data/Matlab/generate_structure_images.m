@@ -1,5 +1,5 @@
-dataset_path='I:\places365standard_easyformat\places365_standard\val2\butte'
-output_path='I:\ECCV DATA\butteval'
+dataset_path=''
+output_path=''
     image_list = dirPlus(dataset_path, 'FileFilter', '\.(jpg|png|tif)$');
     num_image = numel(image_list);
     for i=1:num_image

@@ -1,0 +1,44 @@
+----------------- Options ---------------
+                batchSize: 1                             
+                    beta1: 0.5                           
+          checkpoints_dir: ./checkpoints                 
+           continue_train: False                         
+                  de_root: ./data/datasets/images        
+             display_freq: 10                            
+display_single_pane_ncols: 0                             
+              epoch_count: 1                             
+                 fineSize: 256                           
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 6                             
+                  isTrain: True                          	[default: None]
+               lambda_Gan: 0.2                           
+                lambda_L1: 1                             
+                 lambda_P: 0.2                           
+                 lambda_S: 250                           
+                  log_dir: ./logs                        
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: lambda                        
+                mask_root: ./data/datasets/mask          
+                    model: training1                     
+                 nThreads: 2                             
+               n_layers_D: 3                             
+                     name:  Mutual Encoder-Decoder       
+                      ndf: 64                            
+                      ngf: 64                            
+                    niter: 20                            
+              niter_decay: 100                           
+                     norm: instance                      
+              num_workers: 4                             
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               print_freq: 50                            
+          save_epoch_freq: 2                             
+         save_latest_freq: 5000                          
+                  st_root: ./data/datasets/structure     
+              use_dropout: False                         
+              which_epoch:                               
+----------------- End -------------------

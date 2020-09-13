@@ -42,7 +42,7 @@ We use [Places2](http://places2.csail.mit.edu/), [CelebA](http://mmlab.ie.cuhk.e
 Our model is trained on the irregular mask dataset provided by [Liu et al](https://arxiv.org/abs/1804.07723). You can download publically available Irregular Mask Dataset from their [website](http://masc.cs.gmu.edu/wiki/partialconv).
 
 
-For Structure image of datasets, we follow the [structure flow](hhttps://github.com/RenYurui/StructureFlow) and utlize the [RTV smooth method](http://www.cse.cuhk.edu.hk/~leojia/projects/texturesep/).Run generation function [data/Matlab/generate_structre_images.m](./data/Matlab/generate_structure_images.m) in your matlab. For example, if you want to generate smooth images for Places2, you can run the following code:
+For Structure image of datasets, we follow the [structure flow] (https://github.com/RenYurui/StructureFlow) and utlize the [RTV smooth method](http://www.cse.cuhk.edu.hk/~leojia/projects/texturesep/).Run generation function [data/Matlab/generate_structre_images.m](./data/Matlab/generate_structure_images.m) in your matlab. For example, if you want to generate smooth images for Places2, you can run the following code:
 ```
 generate_structure_images("path to Places2 dataset root", "path to output folder");
 ```
@@ -75,6 +75,9 @@ To log training, use `--./logs` for Tensorboard. The logs are stored at `logs/[n
 
 ## Pre-trained weights and test model
 Comming soon, I want to make a demo.- -
+
+## About Feature equalizations
+I think the feature equalizations may can be utlized in many tasks to replace the traditional attention block (None local/CBAM). I didn't try because of lack of time，I hope someone can try the method and communicate with me.
 
 
 <span id="jump2"></span>

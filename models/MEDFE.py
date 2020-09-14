@@ -229,11 +229,4 @@ class MEDFE(BaseModel):
         fake_image = (self.fake_out.data.cpu()+1)/2.0
         real_gt = (self.Gt_DE.data.cpu()+1)/2.0
         return input_image, fake_image, real_gt
-    #
-    # def load(self, epoch):
-    #     self.netEN.module.load_state_dict(torch.load(r'D:\ECCV\ECCV local dis+mask in+sp+multipy\canshu\PARRY\parry NEW\canshu\EN_epoch{}.pkl'.format(epoch)))
-    #     self.netDE.module.load_state_dict(torch.load(r'D:\ECCV\ECCV local dis+mask in+sp+multipy\canshu\PARRY\parry NEW\canshu\DE_epoch{}.pkl'.format(epoch)))
-    #     self.netMEDFE.module.load_state_dict(torch.load(r'D:\ECCV\ECCV local dis+mask in+sp+multipy\canshu\PARRY\parry NEW\canshu\PC_epoch{}.pkl'.format(epoch)))
-    #     self.netD.module.load_state_dict(torch.load(r'D:\ECCV\ECCV local dis+mask in+sp+multipy\canshu\PARRY\parry NEW\canshu\D_epoch{}.pkl'.format(epoch)))
-    #     self.netF.module.load_state_dict(torch.load(r'D:\ECCV\ECCV local dis+mask in+sp+multipy\canshu\PARRY\parry NEW\canshu\F_epoch{}.pkl'.format(epoch)))
-    #     print('参数完毕哦')
+    

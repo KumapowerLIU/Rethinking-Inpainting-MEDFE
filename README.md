@@ -74,7 +74,7 @@ To log training, use `--./logs` for Tensorboard. The logs are stored at `logs/[n
 
 
 ## Pre-trained weights and test model
-Comming soon, I want to make a demo.- -
+There are three folders to present pre-trained for three datasets respectively, for the celeba, we olny use the centering masks. You can download the pre-trained model [here](https://drive.google.com/drive/folders/1uLC9YN_34mLod5kIE1nMb9P5L40Iqbkp?usp=sharing). The test model and demo will comming soon.
 
 ## About Feature equalizations
 I think the feature equalizations may can be utlized in many tasks to replace the traditional attention block (None local/CBAM). I didn't try because of lack of time，I hope someone can try the method and communicate with me.

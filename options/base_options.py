@@ -9,9 +9,9 @@ class BaseOptions():
 
     def initialize(self, parser):
 
-        parser.add_argument('st_root', type=str, default=r'./data/datasets/structure', help='path to structure images')
-        parser.add_argument('de_root', type=str, default=r'./data/datasets/images', help='path to detail images (which are the groundtruth)')
-        parser.add_argument('mask_root', type=str, default=r'./data/datasets/mask', help='path to mask, we use the datasetsets of partial conv hear')
+        parser.add_argument('--st_root', type=str, default=r'./data/datasets/structure', help='path to structure images')
+        parser.add_argument('--de_root', type=str, default=r'./data/datasets/images', help='path to detail images (which are the groundtruth)')
+        parser.add_argument('--mask_root', type=str, default=r'./data/datasets/mask', help='path to mask, we use the datasetsets of partial conv hear')
         parser.add_argument('--batchSize', type=int, default=1, help='input batch size')
         parser.add_argument('--num_workers', type=int, default=4, help='numbers of the core of CPU')
         parser.add_argument('--name', type=str, default='Mutual Encoder-Decoder',
@@ -23,7 +23,7 @@ class BaseOptions():
         parser.add_argument('--ndf', type=int, default=64, help='# of discrim filters in first conv layer')
         parser.add_argument('--n_layers_D', type=int, default=3, help='only used if which_model_netD==n_layers')
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2')
-        parser.add_argument('model', type=str, default='training1', help='set the names of current training process')
+        parser.add_argument('--model', type=str, default='training1', help='set the names of current training process')
         parser.add_argument('--nThreads', default=2, type=int, help='# threads for loading data')
         parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
         parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization')

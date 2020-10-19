@@ -31,6 +31,8 @@ if __name__ == "__main__":
     model.netEN.module.load_state_dict(torch.load("EN.pkl"))
     model.netDE.module.load_state_dict(torch.load("DE.pkl"))
     model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl"))
+    if not os.path.exists(opt.results_dir):
+        os.mkdir(opt.results_dir)
     for name in tqdm(os.listdir(opt.mask_root)):
         path_m = f"{opt.mask_root}/{name}"
         path_d = f"{opt.de_root}/{name}"

@@ -50,7 +50,7 @@ generate_structure_images("path to Places2 dataset root", "path to output folder
 
 ## Training New Models
 ```bash
-# To train on the Facades or COCO dataset, for example.
+# To train on the you dataset, for example.
 python train.py --st_root=[the path of structure images] --de_root=[the path of ground truth images] --mask_root=[the path of mask images]
 ```
 There are many options you can specify. Please use `python train.py --help` or see the options

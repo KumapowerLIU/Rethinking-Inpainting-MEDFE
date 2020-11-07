@@ -10,20 +10,20 @@ import os
 import torch
 from PIL import Image
 import numpy as np
+from glob import glob
 from tqdm import tqdm
+import torchvision.transforms as transforms
 if __name__ == "__main__":
 
-    def img2tensor(pimg):
-        img = np.array(pimg)
-        img = img/255.0
-        img = torch.Tensor(img.transpose((2, 0, 1)))[None, ...]
-        img = (img-0.5)/0.5
-        return img
-    def msk2tensor(pimg):
-        img = np.array(pimg)
-        img = (img>0)
-        img = torch.Tensor(img)[None, None, ...].float()
-        return img
+    img_transform = transforms.Compose([
+        transforms.Resize(256),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+    mask_transform = transforms.Compose([
+        transforms.Resize(256),
+        transforms.ToTensor()
+    ])
 
 
     opt = TestOptions().parse()
@@ -31,25 +31,38 @@ if __name__ == "__main__":
     model.netEN.module.load_state_dict(torch.load("EN.pkl"))
     model.netDE.module.load_state_dict(torch.load("DE.pkl"))
     model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl"))
-    if not os.path.exists(opt.results_dir):
-        os.mkdir(opt.results_dir)
-    for name in tqdm(os.listdir(opt.mask_root)):
-        path_m = f"{opt.mask_root}/{name}"
-        path_d = f"{opt.de_root}/{name}"
-        path_s = f"{opt.st_root}/{name}"
-        mask = Image.open(path_m).convert("L")
+    results_dir = r'./result'
+    if not os.path.exists( results_dir):
+        os.mkdir(results_dir)
+
+    mask_paths = glob('{:s}/*'.format(opt.mask_root))
+    de_paths = glob('{:s}/*'.format(opt.de_root))
+    st_path = glob('{:s}/*'.format(opt.st_root))
+    image_len = len(de_paths )
+    for i in tqdm(range(image_len)):
+        # only use one mask for all image
+        path_m = mask_paths[0]
+        path_d = de_paths[i]
+        path_s = de_paths[i]
+
+        mask = Image.open(path_m).convert("RGB")
         detail = Image.open(path_d).convert("RGB")
         structure = Image.open(path_s).convert("RGB")
 
-        mask = msk2tensor(mask)
-        detail = img2tensor(detail)
-        structure = img2tensor(structure)
+
+        mask = mask_transform(mask)
+        detail = img_transform(detail)
+        structure = img_transform(structure)
+        mask = torch.unsqueeze(mask, 0)
+        detail = torch.unsqueeze(detail, 0)
+        structure = torch.unsqueeze(structure,0)
+
         with torch.no_grad():
             model.set_input(detail, structure, mask)
             model.forward()
             fake_out = model.fake_out
             fake_out = fake_out.detach().cpu() * mask + detail*(1-mask)
             fake_image = (fake_out+1)/2.0
-        output = fake_image.detach().numpy()[0].transpose((1,2,0))*255
+        output = fake_image.detach().numpy()[0].transpose((1, 2, 0))*255
         output = Image.fromarray(output.astype(np.uint8))
-        output.save(f"{opt.results_dir}/{name}")
+        output.save(rf"{opt.results_dir}/{i}.png")

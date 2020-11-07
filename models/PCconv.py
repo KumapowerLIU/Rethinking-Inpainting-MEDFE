@@ -296,7 +296,7 @@ class PCconv(nn.Module):
         self.activation = nn.LeakyReLU(negative_slope=0.2)
 
     def forward(self, input, mask):
-        mask = util.cal_feat_mask(mask, 3)
+        mask =  util.cal_feat_mask(mask, 3，1)
         # input[2]:256 32 32
         b, c, h, w = input[2].size()
         mask_1 = torch.add(torch.neg(mask.float()), 1)

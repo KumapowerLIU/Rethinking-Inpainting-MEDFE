@@ -88,15 +88,14 @@ class MEDFE(BaseModel):
                 networks.print_network(self.netF)
             print('-----------------------------------------------')
             #####modified
-            if not self.isTrain or opt.continue_train:
+        if self.isTrain:
+            if opt.continue_train :
                 print('Loading pre-trained network!')
-                self.load_network(self.netEN, 'EN', opt.which_epoch)
-                self.load_network(self.netDE, 'DE', opt.which_epoch)
-                self.load_network(self.netMEDFE, 'MEDFE', opt.which_epoch)
-
-                if self.isTrain:
-                    self.load_network(self.netD, 'D', opt.which_epoch)
-                    self.load_network(self.netF, 'F', opt.which_epoch)
+                self.load_networks(self.netEN, 'EN', opt.which_epoch)
+                self.load_networks(self.netDE, 'DE', opt.which_epoch)
+                self.load_networks(self.netMEDFE, 'MEDFE', opt.which_epoch)
+                self.load_networks(self.netD, 'D', opt.which_epoch)
+                self.load_networks(self.netF, 'F', opt.which_epoch)
 
     def name(self):
         return self.modlename

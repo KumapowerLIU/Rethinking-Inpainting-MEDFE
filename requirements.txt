@@ -1,0 +1,4 @@
+pytorch
+tensorboard
+torchvision 
+Pillow

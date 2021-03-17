@@ -1,4 +1,4 @@
-pytorch=1.0.2
-tensorboard=2.4.1
-torchvision=0.9.0
-Pillow=8.1.2
+pytorch==1.0.2
+tensorboard==2.4.1
+torchvision==0.9.0
+Pillow==8.1.2

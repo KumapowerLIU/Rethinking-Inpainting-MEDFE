@@ -92,4 +92,17 @@ If you use this code for your research, please cite our papers.
 }
 ```
 
+## Using TensorBoard in Google Cloud
 
+Run the following command to authenticate Google Cloud. Go to the link and paste the code in the terminal. Then allow access through port 6006. These commands only have to be run once.
+
+```bash
+gcloud auth application-default login 
+gcloud compute firewall-rules create tensorboard-port --allow tcp:6006
+```
+
+After training or testing your model, run the following command the see the result.
+
+```bash
+tensorboard --logdir logs --port 6006 --bind_all
+```

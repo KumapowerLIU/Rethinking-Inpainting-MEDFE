@@ -24,10 +24,7 @@ if __name__ == "__main__":
 
 
     # Start Training
-    #for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
-    n_epoch = 10
-
-    for epoch in range(n_epoch):
+    for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
         epoch_start_time = time.time()
         epoch_iter = 0
         for detail, structure, mask in iterator_train:

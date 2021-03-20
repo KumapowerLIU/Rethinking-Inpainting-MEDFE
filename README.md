@@ -107,4 +107,4 @@ After training or testing your model, run the following command the see the resu
 tensorboard --logdir logs --port 6006 --bind_all
 ```
 
-Then in your local browser, go to `http://<external_IP>:6006`.
+Then in your local browser, go to `http://<external_IP>:6006` to access TensorBoard.

@@ -30,8 +30,9 @@ class DataProcess(torch.utils.data.Dataset):
             # Split into train set
             n_images = len(self.de_paths)
             train_split = n_images * 0.8
-            # self.de_paths = self.de_paths[:train_split]
-            # self.st_paths = self.st_paths[:train_split]
+            print('TRAIN SPLIT: ', train_split)
+            self.de_paths = self.de_paths[:train_split]
+            self.st_paths = self.st_paths[:train_split]
 
             self.Train=True
         self.N_mask = len(self.mask_paths)

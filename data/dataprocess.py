@@ -26,6 +26,13 @@ class DataProcess(torch.utils.data.Dataset):
             self.de_paths = sorted(glob('{:s}/*'.format(de_root), recursive=True))
             self.st_paths = sorted(glob('{:s}/*'.format(st_root), recursive=True))
             self.mask_paths = sorted(glob('{:s}/*'.format(mask_root), recursive=True))
+
+            # Split into train set
+            n_images = len(self.de_paths)
+            train_split = n_images * 0.8
+            self.de_paths = self.de_paths[:train_split]
+            self.st_paths = self.st_paths[:train_split]
+
             self.Train=True
         self.N_mask = len(self.mask_paths)
         print(self.N_mask)

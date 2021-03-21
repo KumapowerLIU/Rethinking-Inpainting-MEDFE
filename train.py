@@ -21,8 +21,10 @@ if __name__ == "__main__":
     if not os.path.exists(dir):
         os.mkdir(dir)
     writer = SummaryWriter(log_dir=dir, comment=opt.name)
+
+
     # Start Training
-    for epoch in range (opt.epoch_count, opt.niter + opt.niter_decay + 1):
+    for epoch in range(opt.epoch_count, opt.niter + opt.niter_decay + 1):
         epoch_start_time = time.time()
         epoch_iter = 0
         for detail, structure, mask in iterator_train:

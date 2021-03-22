@@ -48,7 +48,7 @@ class DataProcess(torch.utils.data.Dataset):
         # mask_img = torch.empty(*de_img.shape, dtype=torch.float32)
         # mask_img[:, :, :] = 0.0
         # mask_img[:, 64:(128+64), 64:(128+64)] = 1.0
-        # return de_img, st_img, mask_img
+        return de_img, st_img, mask_img
 
     def __len__(self):
         return len(self.de_paths)

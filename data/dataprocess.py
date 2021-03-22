@@ -41,14 +41,14 @@ class DataProcess(torch.utils.data.Dataset):
 
         de_img = Image.open(self.de_paths[index])
         st_img = Image.open(self.st_paths[index])
-        #mask_img = Image.open(self.mask_paths[random.randint(0, self.N_mask - 1)])
+        mask_img = Image.open(self.mask_paths[random.randint(0, self.N_mask - 1)])
         de_img = self.img_transform(de_img.convert('RGB'))
         st_img = self.img_transform(st_img .convert('RGB'))
-        #mask_img = self.mask_transform(mask_img.convert('RGB'))
-        mask_img = torch.empty(*de_img.shape, dtype=torch.float32)
-        mask_img[:, :, :] = 0.0
-        mask_img[:, 64:(128+64), 64:(128+64)] = 1.0
-        return de_img, st_img, mask_img
+        mask_img = self.mask_transform(mask_img.convert('RGB'))
+        # mask_img = torch.empty(*de_img.shape, dtype=torch.float32)
+        # mask_img[:, :, :] = 0.0
+        # mask_img[:, 64:(128+64), 64:(128+64)] = 1.0
+        # return de_img, st_img, mask_img
 
     def __len__(self):
         return len(self.de_paths)

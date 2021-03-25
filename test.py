@@ -28,9 +28,17 @@ if __name__ == "__main__":
 
     opt = TestOptions().parse()
     model = create_model(opt)
-    model.netEN.module.load_state_dict(torch.load("EN.pkl"))
-    model.netDE.module.load_state_dict(torch.load("DE.pkl"))
-    model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl"))
+   # model.netEN.module.load_state_dict(torch.load("EN.pkl"))
+   # model.netDE.module.load_state_dict(torch.load("DE.pkl"))
+   # model.netMEDFE.module.load_state_dict(torch.load("MEDEF.pkl"))
+    model_files = sorted(glob("./checkpoints/Mutual Encoder-Decoder/*.pth"), reverse = True)
+    print("model_files=",model_files)
+    model.netEN.load_state_dict(torch.load(model_files[2]))
+    model.netDE.load_state_dict(torch.load(model_files[3]))
+    model.netMEDFE.load_state_dict(torch.load(model_files[0]))
+    model.netEN.eval()
+    model.netDE.eval()
+    model.netMEDFE.eval()
     results_dir = r'./result'
     if not os.path.exists( results_dir):
         os.mkdir(results_dir)

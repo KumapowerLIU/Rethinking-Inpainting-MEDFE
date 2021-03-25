@@ -31,8 +31,8 @@ class DataProcess(torch.utils.data.Dataset):
             n_images = len(self.de_paths)
             train_split = int(n_images * 0.8)
             print('TRAIN SPLIT: ', train_split)
-            self.de_paths = self.de_paths[:train_split]
-            self.st_paths = self.st_paths[:train_split]
+            self.de_paths = self.de_paths[:1000]
+            self.st_paths = self.st_paths[:1000]
 
             self.Train=True
         self.N_mask = len(self.mask_paths)
@@ -41,13 +41,13 @@ class DataProcess(torch.utils.data.Dataset):
 
         de_img = Image.open(self.de_paths[index])
         st_img = Image.open(self.st_paths[index])
-        #mask_img = Image.open(self.mask_paths[random.randint(0, self.N_mask - 1)])
+        mask_img = Image.open(self.mask_paths[random.randint(0, self.N_mask - 1)])
         de_img = self.img_transform(de_img.convert('RGB'))
         st_img = self.img_transform(st_img .convert('RGB'))
-        #mask_img = self.mask_transform(mask_img.convert('RGB'))
-        mask_img = torch.empty(*de_img.shape, dtype=torch.float32)
-        mask_img[:, :, :] = 0.0
-        mask_img[:, 64:(128+64), 64:(128+64)] = 1.0
+        mask_img = self.mask_transform(mask_img.convert('RGB'))
+        # mask_img = torch.empty(*de_img.shape, dtype=torch.float32)
+        # mask_img[:, :, :] = 0.0
+        # mask_img[:, 64:(128+64), 64:(128+64)] = 1.0
         return de_img, st_img, mask_img
 
     def __len__(self):

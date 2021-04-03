@@ -1,0 +1,6 @@
+*.pyc
+*.out*
+*.pth
+checkpoints/Mutual Encoder-Decoder/opt.txt
+**/__pycache__/**
+.idea

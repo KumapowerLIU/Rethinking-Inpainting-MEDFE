@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-26",
+  "original_master": "3c5e8e8bd4d6e0c1df22fee4e67f5ae8c645c7fa",
+  "branch": "codex/modern-pytorch",
+  "source_sha256": {
+    "__init__.py": "a55aaf97910a4434852dcd4af8b94d08a54fa840aa0c774773705de62d45ea39",
+    "__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "blocks.py": "bde903c5f40d8989bc399f0c5caa863f97ed33754a792cc7329c12043374f344",
+    "checkpoint.py": "934101d045d4f8486977f96039b1f46092fb8337ef8f73d5dae5ca3988df5e00",
+    "cli.py": "3c07747d6ee3d60185d9a37178ff96a1e11dcd8672b5c383588e7be393dab7b4",
+    "config.py": "85c252e071f450fb6a431fc15c7951e9ddb25336d701e71fa21c9fe1ec4a6ec5",
+    "data.py": "89ff466f50f073a2982f8d0bb0d0dc74a858bb324bf63f7f2e1a2bd3790ff0a7",
+    "discriminators.py": "65122433f48f138c8e80b9583caab105003dde8c5b3dd2fabfb4b749ba725614",
+    "evaluation.py": "dfd95524e2b45962c56fb5c184eafda73cf2f24f65690861287a6684814bdbd6",
+    "losses.py": "3eb82721f83f281b1cf2d9ab65de9d46a34831fd92f0a5ab7ae989d05c5e18a5",
+    "masks.py": "fde876a0d3f99f9023813ea704ac3de4bd2fea3ea9cf4fa7e1dd9f8bbf92237d",
+    "model.py": "668d77bb02e5dd4fa3771ecffb0a427296cf8f838a3411f476d187c64deb0bd8",
+    "perceptual.py": "64bb87d77768bce4e7f70e083620cf300a449523f58ba0ff77f37c712af27d4e",
+    "rtv.py": "2b93ba6dc424c8dd63c44cc69fd68febb797da3da5584abc4f470bcafdfaa7f5",
+    "runner.py": "756a3b0652a2e92981f83464de567ab20b4db3f6db7f776ade84c2059b248803",
+    "trainer.py": "a612b21b535740bb7bb2f8995a52dcb0c7b157e251a88db9084ecd40f5bcc6cc",
+    "weights.py": "354430eb8a9361d86639f2ffce04d3909e042212a4d0796417e9a76c188695ae"
+  },
+  "cpu": {
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "scipy": "1.18.1",
+    "passed": 198,
+    "skipped_cuda": 5
+  },
+  "cuda": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "Pillow": "10.4.0",
+    "PyYAML": "6.0.2",
+    "passed": 203,
+    "skipped": 0
+  },
+  "profiles": {
+    "paper": {
+      "torch": "2.6.0+cu124",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "batch_size": 2,
+      "precision": "bf16",
+      "generator_parameters": 103118630,
+      "checkpoint_restore_exact": true,
+      "next_step_state_exact": true,
+      "next_step_losses_exact": true,
+      "next_step_numerically_close": true,
+      "comparison": {
+        "max_absolute_difference": {
+          "model": 0.0,
+          "optimizer": 0.0
+        },
+        "tensors": 618,
+        "bitwise_equal": 618,
+        "outside_tolerance": 0,
+        "first_failures": [],
+        "model_tolerance": {
+          "rtol": 0.0001,
+          "atol": 1e-06
+        },
+        "optimizer_tolerance": {
+          "rtol": 0.001,
+          "atol": 1e-05
+        }
+      },
+      "peak_allocated_gib": 2.286942958831787,
+      "peak_reserved_gib": 2.80859375,
+      "backend": {
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "input_kind": "synthetic RGB with actual RTV; numerical smoke only"
+    },
+    "realesrgan-lpips": {
+      "torch": "2.6.0+cu124",
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "batch_size": 2,
+      "precision": "bf16",
+      "generator_parameters": 103118630,
+      "checkpoint_restore_exact": true,
+      "next_step_state_exact": true,
+      "next_step_losses_exact": true,
+      "next_step_numerically_close": true,
+      "comparison": {
+        "max_absolute_difference": {
+          "model": 0.0,
+          "optimizer": 0.0
+        },
+        "tensors": 642,
+        "bitwise_equal": 642,
+        "outside_tolerance": 0,
+        "first_failures": [],
+        "model_tolerance": {
+          "rtol": 0.0001,
+          "atol": 1e-06
+        },
+        "optimizer_tolerance": {
+          "rtol": 0.001,
+          "atol": 1e-05
+        }
+      },
+      "peak_allocated_gib": 2.2716875076293945,
+      "peak_reserved_gib": 2.763671875,
+      "backend": {
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": true,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "input_kind": "synthetic RGB with actual RTV; numerical smoke only"
+    }
+  },
+  "quality_evaluated": false,
+  "legacy_source_files_preserved_byte_for_byte": 29
+}

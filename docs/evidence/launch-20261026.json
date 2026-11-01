@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-26",
+  "run": "unsplash-placeshalf-realesrgan-lpips-gpu0-20261026",
+  "source_sha256": {
+    "__init__.py": "a55aaf97910a4434852dcd4af8b94d08a54fa840aa0c774773705de62d45ea39",
+    "__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "blocks.py": "bde903c5f40d8989bc399f0c5caa863f97ed33754a792cc7329c12043374f344",
+    "checkpoint.py": "934101d045d4f8486977f96039b1f46092fb8337ef8f73d5dae5ca3988df5e00",
+    "cli.py": "03d4843aab767cbba2ab256641d142baaa5f5dbe87634bb2d6ad449b1da4f896",
+    "config.py": "f4d5216c48f3aa12cdd622eecee21cf8febdab865b1be9b3fad548aa639e54af",
+    "data.py": "89ff466f50f073a2982f8d0bb0d0dc74a858bb324bf63f7f2e1a2bd3790ff0a7",
+    "discriminators.py": "65122433f48f138c8e80b9583caab105003dde8c5b3dd2fabfb4b749ba725614",
+    "evaluation.py": "dfd95524e2b45962c56fb5c184eafda73cf2f24f65690861287a6684814bdbd6",
+    "indexed_data.py": "6c899a1f114fdfd445fb219f61a243764ddc594b83aff8be52fe6a047c7481ef",
+    "losses.py": "3eb82721f83f281b1cf2d9ab65de9d46a34831fd92f0a5ab7ae989d05c5e18a5",
+    "masks.py": "fde876a0d3f99f9023813ea704ac3de4bd2fea3ea9cf4fa7e1dd9f8bbf92237d",
+    "model.py": "668d77bb02e5dd4fa3771ecffb0a427296cf8f838a3411f476d187c64deb0bd8",
+    "perceptual.py": "64bb87d77768bce4e7f70e083620cf300a449523f58ba0ff77f37c712af27d4e",
+    "rtv.py": "2b93ba6dc424c8dd63c44cc69fd68febb797da3da5584abc4f470bcafdfaa7f5",
+    "runner.py": "21d21bebf2c9bcb4fa1560673f363eaf32836d256e654b031125520d30fc4956",
+    "trainer.py": "6f02333ebb13d495d8fc9e6391a178279f530837dbf849650cad267d23bc16f9",
+    "weights.py": "354430eb8a9361d86639f2ffce04d3909e042212a4d0796417e9a76c188695ae"
+  },
+  "data": {
+    "format": "indexed_rtv",
+    "train": 1197875,
+    "validation": 2000,
+    "unsplash_train": 296145,
+    "places365_standard_train": 901730,
+    "preprocessing": "EXIF RGB -> square BICUBIC 256 -> unmasked RTV -> shared flip + random mask",
+    "cache": "content addressed float32 NPY"
+  },
+  "settings": {
+    "batch_size": 64,
+    "workers": 8,
+    "amp": "bf16",
+    "memory_budget_gib": 32,
+    "lpips": 1,
+    "l1": 0.1,
+    "aux_structure": 1,
+    "aux_texture": 1,
+    "gan": 0.2,
+    "epochs": 60,
+    "save_every": 100,
+    "evaluate_every": 500,
+    "evaluation_images": 32,
+    "evaluation_batch_size": 4
+  },
+  "capacity": {
+    "batch": 64,
+    "memory_budget_gib": 32,
+    "input_kind": "synthetic capacity probe only",
+    "status": "passed",
+    "steps": [
+      {
+        "seconds": 3.0367201529443264,
+        "generator": 4.33629035949707,
+        "lpips": 0.2615417242050171
+      },
+      {
+        "seconds": 2.3620958626270294,
+        "generator": 7.158605098724365,
+        "lpips": 0.2495482712984085
+      }
+    ],
+    "peak_allocated_gib": 13.798543930053711,
+    "peak_reserved_gib": 18.625,
+    "evaluation_fp32_batch": 4
+  },
+  "tests": {
+    "local_cpu_passed": 231,
+    "local_cuda_skipped": 5,
+    "remote_h100_passed": 236
+  },
+  "initial_checkpoint_step": 2,
+  "formal_run_started": true
+}

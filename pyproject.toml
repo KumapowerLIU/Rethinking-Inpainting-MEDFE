@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medfe-inpainting"
+version = "0.2.0"
+description = "Modern MEDFE image inpainting with PartialConv and a residual U-Net"
+readme = "README.md"
+license-files = ["LICENSE.md"]
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.6,<3", "torchvision>=0.21,<1", "numpy>=1.26,<3",
+  "Pillow>=10", "scipy>=1.11", "PyYAML>=6", "lpips==0.1.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[project.scripts]
+medfe = "medfe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = ["cuda: requires a CUDA GPU", "pretrained: requires cached production weights"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

@@ -1,0 +1,66 @@
+{
+  "model": "MEDFE sd_partial",
+  "step": 120994,
+  "status": "paused",
+  "date": "2026-11-01",
+  "inference": {
+    "step": 120994,
+    "bytes": 579558450,
+    "sha256": "ca98198ef4cd9fad732d5709a0f3a5f9f9646743528dacde744bfb95ddb71e50",
+    "generator_sha256": "e1f0c8e34374523d1b1f1e5ef715b5e7722189dec2d4f12bf39d2128c2f2ebc8",
+    "source_checkpoint_sha256": "bd2b516ba3d7dd19e444feec35279a483e33835b5148d82b1f9c21fd7d7dc975"
+  },
+  "training_checkpoint": {
+    "filename": "medfe-training-step120994.pt",
+    "bytes": 1864094437,
+    "sha256": "bd2b516ba3d7dd19e444feec35279a483e33835b5148d82b1f9c21fd7d7dc975"
+  },
+  "training_hardware": {
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "gpus": 1,
+    "batch": 128,
+    "image_size": 256,
+    "amp": "bf16",
+    "allocator_budget_gib": 38
+  },
+  "environment": {
+    "python": "3.10.14 (main, Mar 21 2024, 16:24:04) [GCC 11.2.0]",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124"
+  },
+  "verification": {
+    "full_vs_export": {
+      "cases": 8,
+      "bitwise_equal": true,
+      "precision": "FP32"
+    },
+    "model_source_matches_training": {
+      "model.py": true,
+      "blocks.py": true,
+      "sd_backbone.py": true
+    },
+    "cli": {
+      "cli_example_max_byte_difference": 0
+    },
+    "cpu_tests": {
+      "passed": 350,
+      "skipped_cuda": 5
+    }
+  },
+  "training_data": {
+    "entries": 1497344,
+    "distinct_source_records": 1228003,
+    "unsplash_entries": 296145,
+    "places365_entries": 901730,
+    "face_entries": 299469,
+    "unique_face_frames": 30128,
+    "validation_entries": 2000
+  },
+  "evaluation": {
+    "images": 32,
+    "hole_psnr": 18.356236154308785,
+    "hole_l1": 0.0759446257571164
+  },
+  "public_download_url": "https://huggingface.co/KumaPower/MEDFE/resolve/main/medfe-sd-partial-step120994.pt",
+  "note": "Final safely saved checkpoint, not validation-best. Fixed32 local validation is not a paper benchmark."
+}

@@ -1,0 +1,45 @@
+# User-selected variant: unchanged MEDFE generator and auxiliary branches,
+# official Real-ESRGAN global D, original local Patch D, LPIPS=1 and L1=0.1.
+# Revised after the 2026-10-26 collapse diagnostic: warm up G before enabling D.
+# Warmup/ramp duration is a candidate schedule, not a validated convergence claim.
+model:
+  base_channels: 64
+  residual_blocks: 4
+  pconv_layers: 5
+  gaussian_sigma: 1.5
+data:
+  train_manifest: data/train.jsonl
+  val_manifest: data/validation.jsonl
+  image_size: 256
+  batch_size: 4
+  workers: 4
+  mask_mode: random
+  min_fraction: 0.1
+  max_fraction: 0.4
+loss:
+  reconstruction: 0.1
+  lpips: 1.0
+  perceptual: 0.0
+  style: 0.0
+  structure: 1.0
+  texture: 1.0
+  adversarial: 0.002
+  lpips_net: vgg
+  lpips_chunk_size: 8
+discriminator:
+  global_kind: realesrgan_unet_sn
+  global_width: 64
+  local_width: 64
+  local_crop_size: 64
+  chunk_size: 8
+  pretrained_path: weights/RealESRGAN_x4plus_netD.pth
+train:
+  output: runs/medfe-realesrgan-lpips-warmup
+  amp: bf16
+  epochs: 60
+  schedule: constant
+  lr: 0.0002
+  adversarial_warmup_steps: 2000
+  adversarial_ramp_steps: 2000
+  save_every: 100
+  evaluate_every: 500

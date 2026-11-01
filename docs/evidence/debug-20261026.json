@@ -1,0 +1,283 @@
+{
+  "formal_run_status": "stopped",
+  "formal_checkpoint_step": 968,
+  "formal_checkpoint_sha256": "3cbce67a6cbb079d6f0e053d56b8223dc920caadd9253260bfb67cf7ab8e1a11",
+  "diagnosis": "Strong evidence for adversarial gradient imbalance; no confirmed new data/mask/architecture logic error.",
+  "last_decoder_GAN_to_non_GAN_gradient_norm_ratio": 123.99369049072266,
+  "gradient_scope": "One FP32 batch of 4, selected final-decoder weight, no preceding D optimizer update",
+  "rescue_100_updates": {
+    "0.2": {
+      "before": {
+        "l1": 0.07681417963950216,
+        "psnr": 14.735649268368444,
+        "hole_l1": 0.3447769624000221,
+        "hole_psnr": 8.203005188976324,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.5165645033121109
+      },
+      "after": {
+        "l1": 0.0755924578107631,
+        "psnr": 14.909463127004786,
+        "hole_l1": 0.33694942833496555,
+        "hole_psnr": 8.376819047612667,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.5089263105764985
+      },
+      "fit_after": {
+        "l1": 0.07164178134095145,
+        "psnr": 15.656743784060254,
+        "hole_l1": 0.27221872446631257,
+        "hole_psnr": 9.779054333752777,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.4703987594693899
+      },
+      "seconds": 20.335122446529567
+    },
+    "0.002": {
+      "before": {
+        "l1": 0.07681417963978375,
+        "psnr": 14.735649268185139,
+        "hole_l1": 0.34477696239925054,
+        "hole_psnr": 8.203005188793021,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.5165645033121109
+      },
+      "after": {
+        "l1": 0.060266474501407645,
+        "psnr": 16.96215338460601,
+        "hole_l1": 0.258911512798012,
+        "hole_psnr": 10.429509305213893,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.4371238211169839
+      },
+      "fit_after": {
+        "l1": 0.045871132464748866,
+        "psnr": 18.8939874323887,
+        "hole_l1": 0.1757807407076311,
+        "hole_psnr": 13.01629798208122,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.35562317445874214
+      },
+      "seconds": 19.009243678301573
+    },
+    "0.0": {
+      "before": {
+        "l1": 0.07681417964121581,
+        "psnr": 14.735649268151084,
+        "hole_l1": 0.3447769624044146,
+        "hole_psnr": 8.203005188758965,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.516564505174756
+      },
+      "after": {
+        "l1": 0.0592144260801524,
+        "psnr": 17.133905688042127,
+        "hole_l1": 0.2525824188333288,
+        "hole_psnr": 10.601261608650006,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.4335942370817065
+      },
+      "fit_after": {
+        "l1": 0.04460125295595703,
+        "psnr": 19.139893503642295,
+        "hole_l1": 0.1709504434661386,
+        "hole_psnr": 13.262204053334816,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.3483999688178301
+      },
+      "seconds": 11.133872765116394
+    }
+  },
+  "fresh_300_updates": {
+    "0.2": {
+      "before": {
+        "l1": 0.07184873386049187,
+        "psnr": 15.840723591103407,
+        "hole_l1": 0.2967768558934993,
+        "hole_psnr": 9.308079511711288,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.6080870870500803
+      },
+      "after": {
+        "l1": 0.07877177014853295,
+        "psnr": 14.663375615452763,
+        "hole_l1": 0.34726074966337533,
+        "hole_psnr": 8.130731536060644,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.593641965650022
+      },
+      "fit_after": {
+        "l1": 0.07989558500889511,
+        "psnr": 14.76296309443589,
+        "hole_l1": 0.29955200786112773,
+        "hole_psnr": 8.88527364412841,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.5464768409729004
+      },
+      "seconds": 55.62350359093398
+    },
+    "0.002": {
+      "before": {
+        "l1": 0.07184873386077813,
+        "psnr": 15.84072359122961,
+        "hole_l1": 0.2967768558936399,
+        "hole_psnr": 9.308079511837494,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.6080870889127254
+      },
+      "after": {
+        "l1": 0.0613716729641747,
+        "psnr": 17.30684986641905,
+        "hole_l1": 0.25859284375579883,
+        "hole_psnr": 10.774205787026935,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.38399077532812953
+      },
+      "fit_after": {
+        "l1": 0.0298647532655916,
+        "psnr": 22.305857891444358,
+        "hole_l1": 0.1121179978246005,
+        "hole_psnr": 16.428168441136883,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.22984732314944267
+      },
+      "seconds": 52.83469658717513
+    },
+    "0.0": {
+      "before": {
+        "l1": 0.07184873386138964,
+        "psnr": 15.84072359107193,
+        "hole_l1": 0.2967768558971907,
+        "hole_psnr": 9.30807951167981,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.6080870870500803
+      },
+      "after": {
+        "l1": 0.06227969984230315,
+        "psnr": 17.18803607210723,
+        "hole_l1": 0.2632970898237782,
+        "hole_psnr": 10.65539199271511,
+        "hole_fraction": 0.2390584945678711,
+        "raw_l1": 0.35757266310974956
+      },
+      "fit_after": {
+        "l1": 0.027100818181795112,
+        "psnr": 22.962513010521633,
+        "hole_l1": 0.10154846290669428,
+        "hole_psnr": 17.084823560214154,
+        "hole_fraction": 0.2720785140991211,
+        "raw_l1": 0.18395377974957228
+      },
+      "seconds": 28.786291755735874
+    }
+  },
+  "validation_size": 32,
+  "fit_size": 16,
+  "diagnostic_batch_size": 4,
+  "candidate_schedule": {
+    "lpips": 1,
+    "l1": 0.1,
+    "adversarial": 0.002,
+    "warmup": 2000,
+    "ramp": 2000,
+    "production_validated": false
+  },
+  "limitation": "Short repeated-data interventions; blur and periodic artifacts remain. Not a convergence or full quality fix claim.",
+  "mechanism_validation": {
+    "status": "PASS",
+    "input_kind": "64 distinct real training records, repeated diagnostic batch",
+    "not_a_production_run": true,
+    "long_run_resumed": false,
+    "batch_size": 64,
+    "precision": "BF16",
+    "torch": "2.6.0+cu124",
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "source": {
+      "__init__.py": "a55aaf97910a4434852dcd4af8b94d08a54fa840aa0c774773705de62d45ea39",
+      "__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+      "blocks.py": "bde903c5f40d8989bc399f0c5caa863f97ed33754a792cc7329c12043374f344",
+      "checkpoint.py": "934101d045d4f8486977f96039b1f46092fb8337ef8f73d5dae5ca3988df5e00",
+      "cli.py": "03d4843aab767cbba2ab256641d142baaa5f5dbe87634bb2d6ad449b1da4f896",
+      "config.py": "39603a766724bdcbd011fe689c17c61a76f64c196f0214f8c2716293f7dded7d",
+      "data.py": "89ff466f50f073a2982f8d0bb0d0dc74a858bb324bf63f7f2e1a2bd3790ff0a7",
+      "discriminators.py": "65122433f48f138c8e80b9583caab105003dde8c5b3dd2fabfb4b749ba725614",
+      "evaluation.py": "dfd95524e2b45962c56fb5c184eafda73cf2f24f65690861287a6684814bdbd6",
+      "indexed_data.py": "6c899a1f114fdfd445fb219f61a243764ddc594b83aff8be52fe6a047c7481ef",
+      "losses.py": "3eb82721f83f281b1cf2d9ab65de9d46a34831fd92f0a5ab7ae989d05c5e18a5",
+      "masks.py": "fde876a0d3f99f9023813ea704ac3de4bd2fea3ea9cf4fa7e1dd9f8bbf92237d",
+      "model.py": "668d77bb02e5dd4fa3771ecffb0a427296cf8f838a3411f476d187c64deb0bd8",
+      "perceptual.py": "64bb87d77768bce4e7f70e083620cf300a449523f58ba0ff77f37c712af27d4e",
+      "rtv.py": "2b93ba6dc424c8dd63c44cc69fd68febb797da3da5584abc4f470bcafdfaa7f5",
+      "runner.py": "21d21bebf2c9bcb4fa1560673f363eaf32836d256e654b031125520d30fc4956",
+      "trainer.py": "78a58876bdeac3bf9a3b43ca0fdfc521752a9ce7869812aec6ba3f5a0e8d4901",
+      "weights.py": "354430eb8a9361d86639f2ffce04d3909e042212a4d0796417e9a76c188695ae"
+    },
+    "weights": [
+      0.0,
+      0.0,
+      0.0010000000474974513,
+      0.0020000000949949026
+    ],
+    "warmup_D_parameters_SN_and_Adam_unchanged": true,
+    "first_GAN_step_updates_D": true,
+    "checkpoint_restore_exact": true,
+    "next_step_exact": true,
+    "next_step_comparison": {
+      "max_absolute_difference": {
+        "model": 0.0,
+        "optimizer": 0.0
+      },
+      "tensors": 642,
+      "bitwise_equal": 642,
+      "outside_tolerance": 0,
+      "first_failures": [],
+      "model_tolerance": {
+        "rtol": 0.0001,
+        "atol": 1e-06
+      },
+      "optimizer_tolerance": {
+        "rtol": 0.001,
+        "atol": 1e-05
+      }
+    },
+    "peak_allocated_gib": 23.50011157989502,
+    "peak_reserved_gib": 27.751953125,
+    "note": "Validates the 2-step warmup/2-step ramp boundary at production batch size. Does not validate the proposed 2000/2000 schedule or output quality."
+  },
+  "tests": {
+    "local": {
+      "passed": 250,
+      "skipped": 5
+    },
+    "remote": {
+      "initial_passed": 254,
+      "initial_failed": 1,
+      "failure": "Missing legacy reference in diagnostic transfer",
+      "corrected_failed_test_passed": 1,
+      "remaining_failures": 0
+    },
+    "ruff_check": "pass",
+    "ruff_format": "pass",
+    "git_diff_check": "pass"
+  },
+  "source_sha256": {
+    "rtv.py": "2b93ba6dc424c8dd63c44cc69fd68febb797da3da5584abc4f470bcafdfaa7f5",
+    "runner.py": "21d21bebf2c9bcb4fa1560673f363eaf32836d256e654b031125520d30fc4956",
+    "config.py": "39603a766724bdcbd011fe689c17c61a76f64c196f0214f8c2716293f7dded7d",
+    "checkpoint.py": "934101d045d4f8486977f96039b1f46092fb8337ef8f73d5dae5ca3988df5e00",
+    "discriminators.py": "65122433f48f138c8e80b9583caab105003dde8c5b3dd2fabfb4b749ba725614",
+    "perceptual.py": "64bb87d77768bce4e7f70e083620cf300a449523f58ba0ff77f37c712af27d4e",
+    "evaluation.py": "dfd95524e2b45962c56fb5c184eafda73cf2f24f65690861287a6684814bdbd6",
+    "__init__.py": "a55aaf97910a4434852dcd4af8b94d08a54fa840aa0c774773705de62d45ea39",
+    "model.py": "668d77bb02e5dd4fa3771ecffb0a427296cf8f838a3411f476d187c64deb0bd8",
+    "cli.py": "03d4843aab767cbba2ab256641d142baaa5f5dbe87634bb2d6ad449b1da4f896",
+    "masks.py": "fde876a0d3f99f9023813ea704ac3de4bd2fea3ea9cf4fa7e1dd9f8bbf92237d",
+    "losses.py": "3eb82721f83f281b1cf2d9ab65de9d46a34831fd92f0a5ab7ae989d05c5e18a5",
+    "trainer.py": "78a58876bdeac3bf9a3b43ca0fdfc521752a9ce7869812aec6ba3f5a0e8d4901",
+    "blocks.py": "bde903c5f40d8989bc399f0c5caa863f97ed33754a792cc7329c12043374f344",
+    "weights.py": "354430eb8a9361d86639f2ffce04d3909e042212a4d0796417e9a76c188695ae",
+    "indexed_data.py": "6c899a1f114fdfd445fb219f61a243764ddc594b83aff8be52fe6a047c7481ef",
+    "__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "data.py": "89ff466f50f073a2982f8d0bb0d0dc74a858bb324bf63f7f2e1a2bd3790ff0a7"
+  }
+}

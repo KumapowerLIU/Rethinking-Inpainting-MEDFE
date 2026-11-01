@@ -1,0 +1,10 @@
+include README.md LICENSE.md
+recursive-include configs *.yaml
+recursive-include docs *.md *.json *.png
+recursive-include examples *.md *.png
+recursive-include scripts *.py
+recursive-include tests *.py *.txt *.md
+recursive-include legacy *.py *.md *.m *.png
+recursive-exclude artifacts *
+recursive-exclude releases *
+global-exclude *.pyc

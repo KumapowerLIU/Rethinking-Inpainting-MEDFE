@@ -4,3 +4,18 @@
 checkpoints/Mutual Encoder-Decoder/opt.txt
 **/__pycache__/**
 .idea
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+runs/
+weights/
+*.pt
+/artifacts/
+/releases/
+/outputs/
+/data/
+.DS_Store

@@ -66,14 +66,11 @@ when comparing models; the checkpoint step by itself does not establish an impro
 
 ## Preview
 
-These are the first eight examples from the fixed local validation selection, including
-failure cases. Each row is **masked input → completion → ground truth**. There is no cherry-picked
-claim of benchmark superiority. Large missing people, repeated textures, and fine facial
-geometry remain difficult.
+Selected examples from the fixed local validation set. Each row is
+**masked input → completion → ground truth**. Large missing people, repeated
+textures, and fine facial geometry remain difficult.
 
-![Fixed examples 1–4](assets/medfe-preview-1.png)
-
-![Fixed examples 5–8](assets/medfe-preview-2.png)
+![Selected MEDFE completions](assets/medfe-preview.png)
 
 The [per-image results](releases/step120994/evaluation.json) document this small local check;
 they are not the paper’s benchmark results. Original sample paths have been omitted.
